@@ -11,6 +11,9 @@ def contar_palabras(frase):
     con una llave por cada palabra y un valor igual a la
     cantidad de veces que aparece en la frase
     """
+    caracter = ".,!?'"
+    for x in range(len(caracter)):
+        frase = frase.replace(caracter[x],"")
     palabras = frase.split()
     resultados = {}
     for palabra in palabras:
@@ -19,7 +22,7 @@ def contar_palabras(frase):
             resultados[palabra] += 1
         else:
             # si no existe, inicializarla
-            resultados[palabra] = 0
+            resultados[palabra] = 1
     return resultados
 
 
@@ -34,7 +37,7 @@ def contar_palabras(frase):
 #   crear un "pull request" y solicitar revision de un tercero.
 
 
-f1 = contar_palabras("Hola dijo Juan. Hola dijo pedro")
+f1 = contar_palabras("Hola dijo Juan? Hola dijo pedro")
 assert f1['Hola'] == 2, f"La función devolvió {f1['Hola']} y esperamos 2"
 
 print('Ejercicio terminado OK')
