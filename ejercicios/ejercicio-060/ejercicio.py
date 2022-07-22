@@ -12,7 +12,15 @@ def es_par(n):
 
 
 def devolver_mayor_par(lista):
-    pass
+    lista_pares = []
+    for numero in lista:
+        if es_par(numero):
+            lista_pares.append(numero)
+    #Guardo los numeros pares en una nueva lista y ordeno de mayor a menor, luego retorno el mayor
+    #Esto no es necesario para los actuales assert, pero la funcion cumple en el caso que la lista
+    #tenga mas de un numero par
+    lista_pares.sort(reverse= True)
+    return lista_pares[0]
 
 
 # ------------------------------------------------------------------------
@@ -27,6 +35,6 @@ def devolver_mayor_par(lista):
 
 
 assert devolver_mayor_par([-1, 3, 6, 9]) == 6
-assert devolver_mayor_par([21, 34, -6, 9]) == 34
+assert devolver_mayor_par([24, 34, -6, 9]) == 34
 
 print('Ejercicio terminado OK')
