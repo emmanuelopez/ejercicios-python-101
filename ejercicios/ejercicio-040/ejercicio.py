@@ -7,7 +7,7 @@ La función esta incompleta y necesita corregirse.
 
 
 def process_data(data):
-    return data.split('\n')
+    return data.split()
 
 
 # ------------------------------------------------------------------------
