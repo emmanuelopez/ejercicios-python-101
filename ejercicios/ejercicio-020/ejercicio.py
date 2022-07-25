@@ -8,7 +8,7 @@ pase como parámetro)
 def cambia_vocales(frase, vocal="a"):
     for letra in frase:
         if letra in "aeiou":
-            frase = frase.replace(letra, vocal)
+            frase = frase.replace(letra, vocal.lower())
         else:
             if letra in "AEIOU":
                 frase = frase.replace(letra, vocal.upper())
@@ -29,5 +29,6 @@ assert cambia_vocales("Juan Carlos") == "Jaan Carlas"
 assert cambia_vocales("Pepito", "e") == "Pepete"
 assert cambia_vocales(vocal="i", frase="me llamo juan") == "mi llimi jiin"
 assert cambia_vocales("PEPEpe", "i") == "PIPIpi"
+assert cambia_vocales("PEPEpe", "I") == "PIPIpi"
 
 print('Ejercicio terminado OK')
