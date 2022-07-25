@@ -15,8 +15,15 @@ def multisuma(*args):
     Dada una serie de parametros, los suma y devuelve el resultado.
     """
     resultado = 0
+    doblar = 0
     for arg in args:
-        resultado += arg
+        if arg == 0:
+            doblar += 1
+        else:
+            if doblar > 0:
+                resultado += arg * 2
+            else:
+                resultado += arg
     return resultado
 
 
