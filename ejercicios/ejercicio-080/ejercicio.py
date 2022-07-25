@@ -16,7 +16,7 @@ class Persona:
 
     @property
     def nombre(self):
-        return self._nombre.title()
+        return self._nombre.title().strip().replace("  "," ")
 
 
 def crear_multiples_personas(nombres):
