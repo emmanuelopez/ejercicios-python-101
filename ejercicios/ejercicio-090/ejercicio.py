@@ -19,6 +19,7 @@ from datetime import datetime
 
 hasta = datetime(2023, 1, 5)
 def calcular_edad(fecha_nac_str):
+    fecha_nac_str = fecha_nac_str.strip().replace(" ", "")
     fecha_nac = datetime.strptime(fecha_nac_str, '%Y-%m-%d')
     diff = hasta - fecha_nac
     return diff.days // 365
