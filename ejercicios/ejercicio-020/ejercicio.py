@@ -7,10 +7,10 @@ pase como parámetro)
 
 def cambia_vocales(frase, vocal="a"):
     for letra in frase:
-        if letra in "aeiou":
+        if letra in "aeiou" and letra != vocal.lower():
             frase = frase.replace(letra, vocal.lower())
         else:
-            if letra in "AEIOU":
+            if letra in "AEIOU" and letra != vocal.upper():
                 frase = frase.replace(letra, vocal.upper())
     return frase
 
