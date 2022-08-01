@@ -9,12 +9,20 @@ que:
 
 
 def mas_de_50(path):
-    """ 
-    Abrir el archivo con el libro de texto, contar la
-    repeticion de palabras y devolver solo aquellas que
-    cumplen con los requisitos
-    """
-    pass
+    f = open(path, encoding="utf8")
+    text = f.read()
+    f.close()
+
+    palabras = {}
+    for palabra in text.split(' '):
+        palabra = palabra.lower()
+        if len(palabra) < 6:  # omitir las palabras con menos de 6 letras
+            continue
+        if palabra not in palabras.keys():
+            palabras[palabra] = 1
+        palabras[palabra] += 1
+        
+    return dict(filter(lambda x: x[1] > 50, palabras.items()))
 
 # ------------------------------------------------------------------------
 # NO BORRAR O MODIFICAR LAS LINEAS QUE SIGUEN
